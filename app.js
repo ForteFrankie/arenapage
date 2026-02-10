@@ -1,6 +1,6 @@
 document.getElementById('loginButton').addEventListener('click', function() {
     const clientId = 'cEofXoYmuJdwFYo4jS_-25fVtTYcbHsoxGENz892SeY'; // Replace with your Are.na client ID
-    const redirectUri = 'https://localhost/index.html'; // Make sure this matches with Are.na settings
+    const redirectUri = 'fortefrankie.github.io/index.html'; // Make sure this matches with Are.na settings
 
     const authUrl = `https://are.na/oauth/authorize?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&response_type=token`;
 
