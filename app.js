@@ -2,9 +2,8 @@ document.getElementById('loginButton').addEventListener('click', function() {
     const clientId = 'cEofXoYmuJdwFYo4jS_-25fVtTYcbHsoxGENz892SeY'; // Replace with your Are.na client ID
     const redirectUri = 'https://fortefrankie.github.io/arenapage/'; // Make sure this matches with Are.na settings
 
-
 	const authUrl = `https://are.na/oauth/authorize?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&response_type=code`;
-
+	console.log('Authorization URL:', authUrl);
 
     window.location.href = authUrl; // Redirect to Are.na authorization page
 });
@@ -28,7 +27,7 @@ window.onload = async function() {
 async function exchangeCodeForToken(code) {
     const clientId = 'cEofXoYmuJdwFYo4jS_-25fVtTYcbHsoxGENz892SeY'; // Replace with your Are.na Client ID
     const clientSecret = 'psueZN8qPFZHoqbiFG_7I3CKAT-aZhuQt5t9DtzRDks'; // Replace with your Are.na Client Secret
-    const redirectUri = 'https://fortefrankie.github.io/arenapage/index.html'; // Update with your GitHub Pages URL
+    const redirectUri = 'https://fortefrankie.github.io/arenapage/'; // Update with your GitHub Pages URL
 
     const response = await fetch('https://are.na/oauth/token', {
         method: 'POST',
@@ -51,3 +50,5 @@ async function exchangeCodeForToken(code) {
         throw new Error('Error retrieving access token: ' + data.error);
     }
 }
+
+console.log('Redirect URI:', redirectUri);
